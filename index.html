@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title: PyScript</title>
+</head>
+<body>
+	<py-script> 
+        """ KMITL PROJECT """
+def numclass():
+    """ SMARTCLASSROOM """
+    student_list = [] #รหัสนักศึกษาของนักเรียนโดยจะให้ขึ้นต้นด้วย02
+    teacher_list = [] #รหัสอาจารย์โดยจะให้ขึ้นต้นด้วย01
+    while True:
+        id_num = input() #อินพุตรหัสนักศึกษาและรหัสอาจารย์เท่านั้น
+        if id_num[:2] == '00':
+            break
+        if id_num[:2] == '10':
+            teacher_list.append(id_num)
+        elif id_num[:2] == '20':
+            student_list.append(id_num)
+        numofclass = len(student_list)+len(teacher_list)
+
+    fan, light, air = 0, 0, 0
+    if numofclass <= 5 and numofclass > 0:
+        fan += 1
+        light += 1
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+    elif numofclass <= 10 and numofclass > 5:
+        fan += 2
+        light += 2
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+    elif numofclass <= 15 and numofclass > 10:
+        fan += 3
+        light += 3
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+    elif numofclass <= 20 and numofclass > 15:
+        fan += 4
+        light += 4
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+    elif numofclass <= 25 and numofclass > 20:
+        air += 1
+        light += 5
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+    elif numofclass <= 31 and numofclass > 25:
+        air += 2
+        light += 6
+        print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
+
+    studenn = list(map(int,student_list))
+    studennza = (studenn)
+    set_all = set()
+    set_ma = set()
+    for i in range(20001,20031):
+        set_all.add(i)
+    for j in studennza:
+        set_ma.add(j)
+    ans = set_all.difference(set_ma)
+    print("นักเรียนที่ขาดเรียน :" ,*ans)
+
+numclass()
+ </py-script>
+</body>
+</html>
