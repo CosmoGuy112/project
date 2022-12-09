@@ -40,7 +40,7 @@ def numclass():
         light += 6
         print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
         
-    studenn = list(map(int,student_list)) 
+    studenn = list(map(int,student_list)) #แสดงรหัสนักเรียนที่ขาดเรียน
     studennza = (studenn)
     set_all = set()
     set_ma = set()
