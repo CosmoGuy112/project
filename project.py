@@ -13,8 +13,7 @@ def numclass():
             student_list.append(id_num)
         numofclass = len(student_list)+len(teacher_list)
     print(sorted(student_list))
-numclass()
-def fan():
+
     fan, light, air = 0, 0, 0
     if numofclass <= 5 and numofclass > 0:
         fan += 1
@@ -40,17 +39,19 @@ def fan():
         air += 2
         light += 6
         print("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
-fan()
+        
+    studenn = list(map(int,student_list)) 
+    studennza = (studenn)
+    set_all = set()
+    set_ma = set()
+    for i in range(20001,20031):
+        set_all.add(i)
+    for j in studennza:
+        set_ma.add(j)
+    ans = set_all.difference(set_ma)
+    print("นักเรียนที่ขาดเรียน :" ,*ans)
     
-#     all_people = ['020001', '020002', '020003', '020004', '020005', '020006'\
-#     '020007', '020008', '020009', '020010', '020011', '020012', '020013', '020014', '020015'\
-#     '020016', '020017', '020018', '020019', '020020', '020021', '020022', '020023', '020024'\
-#     '020025', '020026', '020027', '020028', '020029', '020030']
-#     for _ in range(30):
-#         all_people.remove(id_num)
-#     all_people = ''.join(all_people)
-#     print(all_people)
-
+numclass()
 
 
 
