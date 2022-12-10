@@ -7,14 +7,14 @@ def numclass():
         id_num = input() #อินพุตรหัสนักศึกษาและรหัสอาจารย์เท่านั้น
         if id_num[:2] == '00':
             break
-        if id_num[:2] == '01':
+        if id_num[:2] == '10':
             teacher_list.append(id_num)
-        elif id_num[:2] == '02':
+        elif id_num[:2] == '20':
             student_list.append(id_num)
         numofclass = len(student_list)+len(teacher_list)
-    print(sorted(student_list))
 
-    fan, light, air = 0, 0, 0
+    fan, light, air = 0, 0, 0 #เก็บค่าเป็น 0 ไว้ก่อนเพราะตอนแรกยังไม่มีการเปิดใช้งาน
+    #เข้าเงื่อนไขการเปิด/ปิดไฟ พัดลมและแอร์ ต่อจำนวนคนในห้อง
     if numofclass <= 5 and numofclass > 0:
         fan += 1
         light += 1
