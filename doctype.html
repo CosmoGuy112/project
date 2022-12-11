@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>Smart Classroom</title>
+</head>
+<body>
+    <h1>Home page!</h1>
+    <form action="" method="POST">
+        <label>Teachers</label><br>
+        <input type="text" name="teacher_list"><br>
+        <label>Students</label><br>
+        <input type="text" name="student_list">
+        <br><br><br>
+        <input type="submit">
+    </form>
+{% if data %}
+{{fan_light}}
+<br>
+นักเรียนที่ขาดเรียน :
+{% for student in missing %}
+<p>{{student}}</p>
+{% endfor %}
+{% endif %}
+</body>
+</html>
