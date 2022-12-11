@@ -2,24 +2,40 @@
 <html>
 <head>
     <title>Smart Classroom</title>
+<style>
+.center {
+  text-align: center;
+  border: 3px solid MediumVioletRed;
+}
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+</style>
 </head>
 <body>
-    <h1>Home page!</h1>
+    <div class = "center">
+        <p class="p1">Smart Classroom</p>
+    <div>
+        
     <form action="" method="POST">
         <label>Teachers</label><br>
         <input type="text" name="teacher_list"><br>
         <label>Students</label><br>
         <input type="text" name="student_list">
-        <br><br><br>
-        <input type="submit">
+        <br><br>
+        <input type="submit" value="submit" >
+        <br><br>
     </form>
 {% if data %}
+<br>
 {{fan_light}}
 <br>
 นักเรียนที่ขาดเรียน :
+
 {% for student in missing %}
 <p>{{student}}</p>
 {% endfor %}
 {% endif %}
 </body>
-</html>
+</html> 
