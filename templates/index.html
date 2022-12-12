@@ -1,10 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <title>Smart Classroom</title>
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
@@ -20,6 +18,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+    <title>Smart Classroom</title>
+<style>
+.center {
+  text-align: center;
+  border: 3px solid MediumVioletRed;
+
+}
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+}
+</style>
 </head>
 <body>
     <div class="container">
@@ -27,7 +36,7 @@
             <h1>Smart Classroom</h1>
         </div>
         <div class="main">
-            <form action="" method="POST">
+            <form action="/result" method="POST">
                 <span>
                     <i></i>
                     <input type="text" placeholder="Teacher" name="teacher_list">
@@ -37,21 +46,8 @@
                     <input type="text" placeholder="Students" name="student_list">
                 </span><br><br>
                     <input type="submit" class ="btn btn-success" value="submit">
-                    <a href="/" class="btn btn-danger btn-rounded">Clear</a>
                     <br><br>
             </form>
-        </div>
-    </div>
-{% if data %}
-<br>
-{{fan_light}}
-<br>
-นักเรียนที่ขาดเรียน :
-
-{% for student in missing %}
-<p>{{student}}</p>
-{% endfor %}
-{% endif %}
 </body>
 <script
   type="text/javascript"
