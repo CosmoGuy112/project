@@ -22,29 +22,12 @@
 <style>
 .center {
   text-align: center;
-  border: 3px solid MediumVioletRed;
 
 }
 .p1 {
     font-family: "Times New Roman", Times, serif;
 }
 </style>
-<script>
-function addData(ptype) {
-    var studentCell = document.getElementById("stud_lst");
-    var teacherCell = document.getElementById("teac_lst");
-    var inputCell = document.getElementById("input_data");
-    if (ptype == 'student') {
-        if (studentCell.value.length == 0) {studentCell.value = document.getElementById("input_data").value;}
-        else {studentCell.value = studentCell.value + ' ' + document.getElementById("input_data").value;}
-    } 
-    if (ptype == 'teacher') {
-        if (teacherCell.value.length == 0) {teacherCell.value = document.getElementById("input_data").value;}
-        else {teacherCell.value = teacherCell.value + ' ' + document.getElementById("input_data").value;}
-    }
-    inputCell.value = '';
-}
-</script>
 </head>
 <body>
     <div class="container">
@@ -53,20 +36,15 @@ function addData(ptype) {
         </div>
         <div class="main">
             <form action="/result" method="POST">
-                    <input type="text" placeholder="Students" id="stud_lst" name="student_list" readonly>
-                    <input type="text" placeholder="Teacher" id="teac_lst" name="teacher_list" readonly><br><br>
-                    <input type="submit" class ="btn btn-success" value="submit">
-                    <br><br>
-            </form>
                 <span>
                     <i></i>
-                    <input type="text" placeholder="Add ID" id="input_data">
-                    <button class="btn btn-success" onclick="addData('student');">Add Student</button>
-                    <button class="btn btn-success" onclick="addData('teacher');">Add Teacher</button>
-                </span><br><br>
-
-            <button class="btn btn-danger" onclick="document.getElementById('stud_lst').value = ''; ">Clear Student</button>
-            <button class="btn btn-danger" onclick="document.getElementById('teac_lst').value = ''; ">Clear Teacher</button>
+                    <input type="text" placeholder="Username" name="teacher_list">
+                </span><br>
+                <span>
+                    <i></i>
+                    <input type="text" placeholder="password" name="student_list">
+                </span><br>
+                    <button>Submit</button>
             </body>
 <script
   type="text/javascript"
