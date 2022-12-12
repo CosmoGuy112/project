@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="/static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/resultstyle.css">
 <style>
 .center {
     text-align: center;
-    border: 3px solid MediumVioletRed;
-
 }
 .p1 {
     font-family: "Times New Roman", Times, serif;
@@ -24,59 +24,42 @@
   padding: 10px;
   height: 30px; /* Should be removed. Only for demonstration */
 }
+
 </style>
 </head>
 <body>
 <div class = "center">
-    <p class="p1">Smart Classroom</p>
+    <div class="header">
+        <h1>Smart Classroom</h1>
+    </div>
+
 <div>
 <h1></h1>
 {% if data %}
-<h2>ไฟ พัดลม</h2>
 {{fan_light}}
 <br>
-<h2>นักเรียนที่ขาดเรียน</h2>
-{% for student_one in missing_one %}
+<h2>Absent Student</h2>
 <div class="row">
+{% for student_one in missing_one %}
     <div class="column">
         <p>{{student_one}}</p>
     </div>
-    <div class="column">
-        <p>{{student_two}}</p>
-    </div>
-    <div class="column">
-        <p>{{student_three}}</p>
-    </div>
-  </div>
 {% endfor %}
 {% for student_two in missing_two %}
-  <div class="row">
-    <div class="column">
-        <p>{{student_one}}</p>
-    </div>
     <div class="column">
         <p>{{student_two}}</p>
     </div>
-    <div class="column">
-        <p>{{student_three}}</p>
-    </div>
-  </div>
 {% endfor %}
 {% for student_three in missing_three %}
-<div class="row">
-    <div class="column">
-        <p>{{student_one}}</p>
-    </div>
-    <div class="column">
-        <p>{{student_two}}</p>
-    </div>
     <div class="column">
         <p>{{student_three}}</p>
     </div>
-  </div>
 {% endfor %}
+<div>
 {% endif %}
     <br>
     <a href="/" class="btn btn-danger btn-rounded">Reset</a>
 </body>
 </html>
+
+
