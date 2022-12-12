@@ -30,13 +30,18 @@
     <div class = "center">
         <div class="header">
             <h1>Smart Classroom</h1>
-        </div>
+        </div><br>
     <div>
+    <div class = "electric" >
     {% if data %}
     {{fan_light}}
     {% endif %}
+    </div>
     <br>
-    <h2>Absent Student</h2>
+    <div class="absent">
+        <h2>Absent Student</h2>
+    </div>
+    <div class="student">
     <div class="row">
         <div class="column">
             {% for student_one in missing_one %}
@@ -54,10 +59,9 @@
             {% endfor %}
         </div>
     </div>
+    </div>
     <button onclick="location.href='/'" type="button" class="btn btn-danger btn-rounded">
         Reset
     </button>
 </body>
 </html>
-
-
