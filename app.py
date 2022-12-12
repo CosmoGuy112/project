@@ -40,16 +40,23 @@ def output():
             lessfive = ("Fan : %d\nLight : %d\nAir : %d" %(fan, light, air))
         studenn = list(map(int,student_list)) #แสดงรหัสนักเรียนที่ขาดเรียน
         studennza = (studenn)
-        set_all = set()
+        set_one = set()
+        set_two = set()
+        set_three = set()
         set_ma = set()
-        for i in range(20001,20031):
-            set_all.add(i)
+        for i in range(20001,20011):
+            set_one.add(i)
+        for p in range(20011,20021):
+            set_two.add(p)
+        for p in range(20021,20031):
+            set_three.add(p)
         for j in studennza:
             set_ma.add(j)
-        ans = set_all.difference(set_ma)
-        return render_template("result.html", fan_light=lessfive, missing=ans, data=True)
-
-
+        ans_one = set_one.difference(set_ma)
+        ans_two = set_two.difference(set_ma)
+        ans_three = set_three.difference(set_ma)
+        return render_template("result.html", fan_light=lessfive, missing_one=ans_one, missing_two=ans_two, missing_three=ans_three, data=True)
+        
 
 if __name__ == "__main__":
     app.run(debug=True)
