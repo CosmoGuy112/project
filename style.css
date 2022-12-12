@@ -20,9 +20,9 @@ body {
 }
 
 .header h1 {
-	color: #333;
+	color: rgb(255, 253, 253);
 	font-size: 45px;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 
 .main {
@@ -37,7 +37,7 @@ body {
 	padding-left: 40px;
 	box-sizing: border-box;
 	font-size: 15px;
-	color: #333;
+	color: rgb(255, 255, 255);
 	margin-bottom: 40px;
 }
 
@@ -69,7 +69,6 @@ body {
 	font-size: 16px;
 	top: 2px;
 }
-
 
 
 
