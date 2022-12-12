@@ -8,19 +8,20 @@ body {
 
 .container {
 	width: 380px;
-	margin:7% auto;
+	margin:10% auto;
 	border-radius: 25px;
-	background-color: rgba(0,0,0,0.1);
-	box-shadow: 0 0 17px #333;
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px rgb(33, 34, 33);
 }
 
 .header {
 	text-align: center;
 	padding-top: 75px;
+	
 }
 
 .header h1 {
-	color: rgb(255, 253, 253);
+	color: rgb(255, 255, 255);
 	font-size: 45px;
 	margin-bottom: 50px;
 }
@@ -32,7 +33,7 @@ body {
 .main input, button {
 	width: 300px;
 	height: 40px;
-	border:none;
+	border: none;
 	outline: none;
 	padding-left: 40px;
 	box-sizing: border-box;
@@ -43,7 +44,7 @@ body {
 
 .main button {
 	padding-left: 0;
-	background-color: #83acf1;
+	background-color: #ee8631;
 	letter-spacing: 1px;
 	font-weight: bold;
 	margin-bottom: 70px;
