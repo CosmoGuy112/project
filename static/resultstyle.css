@@ -1,0 +1,10 @@
+body {
+	font-family: sans-serif;	
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-size: auto;
+}
+
+.header {
+    color: rgb(245, 41, 184);
+}
