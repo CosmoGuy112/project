@@ -1,8 +1,6 @@
 <!doctype html>
 <html>
 <head>
-
-
 <style>
 .center {
     text-align: center;
@@ -11,6 +9,20 @@
 }
 .p1 {
     font-family: "Times New Roman", Times, serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 100%;
+  padding: 10px;
+  height: 30px; /* Should be removed. Only for demonstration */
 }
 </style>
 </head>
@@ -24,8 +36,44 @@
 {{fan_light}}
 <br>
 <h2>นักเรียนที่ขาดเรียน</h2>
-{% for student in missing %}
-<p>{{student}}</p>
+{% for student_one in missing_one %}
+<div class="row">
+    <div class="column">
+        <p>{{student_one}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_two}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_three}}</p>
+    </div>
+  </div>
+{% endfor %}
+{% for student_two in missing_two %}
+  <div class="row">
+    <div class="column">
+        <p>{{student_one}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_two}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_three}}</p>
+    </div>
+  </div>
+{% endfor %}
+{% for student_three in missing_three %}
+<div class="row">
+    <div class="column">
+        <p>{{student_one}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_two}}</p>
+    </div>
+    <div class="column">
+        <p>{{student_three}}</p>
+    </div>
+  </div>
 {% endfor %}
 {% endif %}
     <br>
