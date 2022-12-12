@@ -2,14 +2,16 @@ from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def home():
+    return render_template("index.html")
+    
+@app.route("/result", methods=['POST'])
+def output():
     if request.method == 'POST':
         student_list = request.form.get('student_list').split() #รหัสนักศึกษาของนักเรียนโดยจะให้ขึ้นต้นด้วย02
         teacher_list = request.form.get('teacher_list').split() #รหัสอาจารย์โดยจะให้ขึ้นต้นด้วย01
-        numofclass = len(student_list) + len(teacher_list)
-        
-
+        numofclass = len(student_list)+ len(teacher_list)
         fan, light, air = 0, 0, 0 #เก็บค่าเป็น 0 ไว้ก่อนเพราะตอนแรกยังไม่มีการเปิดใช้งาน
         #เข้าเงื่อนไขการเปิด/ปิดไฟ พัดลมและแอร์ ต่อจำนวนคนในห้อง
         if numofclass <= 5 and numofclass > 0:
@@ -45,9 +47,9 @@ def home():
         for j in studennza:
             set_ma.add(j)
         ans = set_all.difference(set_ma)
-        print("นักเรียนที่ขาดเรียน :" ,*ans)
-        return render_template("doctype.html", fan_light = lessfive, missing = ans, data = True)
-    if request.method == 'GET':
-        return render_template("doctype.html", data = False)
+        return render_template("result.html", fan_light=lessfive, missing=ans, data=True)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
